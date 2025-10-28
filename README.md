@@ -291,24 +291,43 @@ All communication includes:
    - Quality gates
    - Use cases and examples
 
-2. **[claudcodesetup.md](claudcodesetup.md)**: Complete setup guide
+2. **[MCP_SETUP.md](MCP_SETUP.md)**: MCP Server Configuration Guide **(NEW)**
+   - Essential vs optional MCP servers
+   - User-level (global) configuration
+   - Qdrant custom MCP server setup
+   - Per-project collection strategy
+   - Service vs MCP clarification
+
+3. **[RECOMMENDED_AGENTS.md](RECOMMENDED_AGENTS.md)**: Agent Extension Recommendations **(NEW)**
+   - High-priority agent additions (DevOps, Database, Security, API)
+   - Medium-priority additions (Code Review, Dependency Mgmt, Performance)
+   - Specialized agents (Mobile, Desktop, Data Science)
+   - Implementation templates and priorities
+
+4. **[claudcodesetup.md](claudcodesetup.md)**: Complete initial setup guide
    - Step-by-step MCP server installation
    - Qdrant vector database setup
    - Agent implementation code
    - Technology stack configuration
    - Verification and troubleshooting
 
-3. **[architecture.drawio](architecture.drawio)**: Visual architecture diagram
+5. **[architecture.drawio](architecture.drawio)**: Visual architecture diagram
    - Hierarchical agent structure
    - Communication flow
    - Agent relationships
    - Open with Draw.io (https://app.diagrams.net/)
 
-4. **[TOOLS.md](TOOLS.md)**: Complete tools installation list
+6. **[TOOLS.md](TOOLS.md)**: Complete tools installation list
    - All required software and packages
    - Installation commands
    - Verification steps
    - Quick install scripts
+
+7. **[CLAUDE.md](CLAUDE.md)**: Project instructions for Claude Code
+   - Overview and quick reference
+   - MCP server guidance
+   - Development patterns
+   - Troubleshooting tips
 
 ### Key Architectural Concepts
 

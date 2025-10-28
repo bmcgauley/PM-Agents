@@ -599,6 +599,43 @@ Each agent maintains:
 
 ---
 
+## Agent Extensions and Recommendations
+
+The current agent architecture can be extended with additional specialized agents. See [RECOMMENDED_AGENTS.md](RECOMMENDED_AGENTS.md) for detailed recommendations including:
+
+### High Priority Additions
+- **DevOps/CI-CD Agent**: Automate deployment and CI/CD pipelines
+- **Database/Data Agent**: Database design and migration management
+- **Security/Compliance Agent**: Security audits and compliance checks
+- **API Integration Agent**: REST/GraphQL API design and implementation
+
+### Medium Priority Additions
+- **Code Review Agent**: Automated PR reviews and quality checks
+- **Dependency Management Agent**: Package updates and security patching
+- **Performance Optimization Agent**: Profiling and performance tuning
+- **Infrastructure-as-Code Agent**: Terraform/Pulumi/CloudFormation management
+
+### Specialized Additions
+- Mobile, Desktop, Data Science, Localization, Accessibility agents (as needed)
+
+These recommendations are based on common software development workflows and complement the existing agent hierarchy.
+
+---
+
+## MCP Server Configuration
+
+All agents rely on MCP (Model Context Protocol) servers for tool access. See [MCP_SETUP.md](MCP_SETUP.md) for:
+
+- **Essential MCP Servers**: filesystem, github, brave-search, memory, qdrant, puppeteer
+- **Optional MCP Servers**: supabase, postgres, sequential-thinking, slack/discord
+- **Configuration Strategy**: User-level (global) MCP servers with per-project Qdrant collections
+- **Service vs MCP**: TensorBoard, Jupyter are background services, NOT MCP servers
+
+---
+
 ## Next Steps
 
-See [claudcodesetup.md](claudcodesetup.md) for detailed setup instructions.
+1. **Setup MCP Servers**: See [MCP_SETUP.md](MCP_SETUP.md) for configuration
+2. **Review Agent Recommendations**: See [RECOMMENDED_AGENTS.md](RECOMMENDED_AGENTS.md) for extension ideas
+3. **Initial Setup**: See [claudcodesetup.md](claudcodesetup.md) for detailed setup instructions
+4. **Index Codebase**: Run `python init_qdrant.py` and `python index_codebase.py` to enable semantic search
