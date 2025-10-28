@@ -1,0 +1,215 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Multi-Agent Architecture" id="agent-arch">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1400">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- User Request -->
+        <mxCell id="user" value="User Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="40" width="220" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Coordinator -->
+        <mxCell id="coordinator" value="coordinator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="150" width="270" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow user to coordinator -->
+        <mxCell id="arrow1" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=3;" edge="1" parent="1" source="user" target="coordinator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="400" as="sourcePoint"/>
+            <mxPoint x="850" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Planner -->
+        <mxCell id="planner" value="planner" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="290" width="270" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow coordinator to planner -->
+        <mxCell id="arrow2" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="coordinator" target="planner">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="400" as="sourcePoint"/>
+            <mxPoint x="850" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Supervisor -->
+        <mxCell id="supervisor" value="supervisor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="430" width="270" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow planner to supervisor -->
+        <mxCell id="arrow3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="planner" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="800" y="500" as="sourcePoint"/>
+            <mxPoint x="850" y="450" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Specialist Agents Row 1 -->
+        <mxCell id="researcher" value="researcher" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="600" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="coder" value="coder" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="600" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="browser" value="browser" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="600" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="reporter" value="reporter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="600" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="validator" value="validator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="960" y="600" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="qdrant" value="qdrant vector" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="600" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows from supervisor to specialists -->
+        <mxCell id="arrow4" value="" style="endArrow=classic;html=1;exitX=0.2;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="researcher">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow5" value="" style="endArrow=classic;html=1;exitX=0.35;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="coder">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow6" value="" style="endArrow=classic;html=1;exitX=0.45;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="browser">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow7" value="" style="endArrow=classic;html=1;exitX=0.55;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="reporter">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow8" value="" style="endArrow=classic;html=1;exitX=0.65;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="validator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow9" value="" style="endArrow=classic;html=1;exitX=0.8;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="qdrant">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Return arrows from specialists -->
+        <mxCell id="arrow10" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.2;entryY=1;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="researcher" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow11" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.35;entryY=1;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="coder" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow12" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.45;entryY=1;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="browser" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow13" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.55;entryY=1;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="reporter" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow14" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.65;entryY=1;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="validator" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="arrow15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.8;entryY=1;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="qdrant" target="supervisor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="550" as="sourcePoint"/>
+            <mxPoint x="750" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- End State -->
+        <mxCell id="end" value="_end_" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="665" y="750" width="270" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow to end -->
+        <mxCell id="arrow16" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="reporter" target="end">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="700" as="sourcePoint"/>
+            <mxPoint x="750" y="650" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Feedback loop from end to coordinator -->
+        <mxCell id="arrow17" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=1;entryY=0.5;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="end" target="coordinator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="600" as="sourcePoint"/>
+            <mxPoint x="1050" y="550" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1400" y="795"/>
+              <mxPoint x="1400" y="195"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Feedback planner to coordinator -->
+        <mxCell id="arrow18" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="planner" target="coordinator">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="400" as="sourcePoint"/>
+            <mxPoint x="650" y="350" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="600" y="335"/>
+              <mxPoint x="600" y="195"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Feedback supervisor to planner -->
+        <mxCell id="arrow19" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=1;entryY=0.5;strokeWidth=2;dashed=1;dashPattern=8 8;" edge="1" parent="1" source="supervisor" target="planner">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="500" as="sourcePoint"/>
+            <mxPoint x="1050" y="450" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1000" y="475"/>
+              <mxPoint x="1000" y="335"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
