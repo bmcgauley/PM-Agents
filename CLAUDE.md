@@ -59,6 +59,38 @@ Specialized Agents:
 - **Phase gates**: Coordinator makes GO/NO-GO decisions between phases
 - **Project state tracking**: Maintains phase outputs, decisions, risks, and issues
 
+## Git Workflow
+
+### Branching Strategy
+- Work on **feature branches** (`feature/task-name`) or **phase branches** (`phase/phase-name`)
+- Never commit directly to `master`
+- Create PR to master only at **major milestones** (phase completion, significant features)
+
+### Task Completion Pattern
+1. Create GitHub issue for task: `gh issue create --title "Task" --body "Description"`
+2. Create feature/phase branch: `git checkout -b feature/task-name`
+3. Complete implementation
+4. Stage changes: `git add .`
+5. Commit with issue reference: `git commit -m "Complete task\n\nCloses #N"`
+6. Mark task complete (update todos, close issue)
+7. **Check milestone**: If at major milestone → create PR, otherwise continue next task
+
+### GitHub CLI Commands
+```bash
+# Task management
+gh issue create --title "Implement X" --label "task"
+gh issue list --label "task"
+gh issue close <N> --comment "Completed"
+
+# PR at milestone
+gh pr create --title "Complete Phase 3.1" --body "Summary" --base master
+```
+
+### Documentation Style
+- Be **concise** - remove unnecessary words
+- Refactor verbose documentation for clarity and brevity
+- Focus on actionable information
+
 ## Development Commands
 
 ### Running the System
