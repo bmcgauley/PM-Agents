@@ -120,6 +120,23 @@ pm_project_results.json
 test_output/
 scratch/
 
+# Database
+pm_agents.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Data directories (keep structure, ignore contents)
+data/cache/*
+!data/cache/.gitkeep
+data/vectors/*
+!data/vectors/.gitkeep
+data/projects/*
+!data/projects/.gitkeep
+
+# Docker volumes
+docker-volumes/
+
 # Windows reserved filenames (cannot be committed)
 nul
 CON

@@ -362,3 +362,25 @@ export SUPABASE_ANON_KEY="..."
 4. Implement comprehensive test suite
 5. Add logging and monitoring for agent communication
 6. Create example projects demonstrating full system capabilities
+
+## Daily Workflow Pattern
+```
+1. Check progress:    ghp
+2. Find next task:    ghn
+3. Start task:        ghst <number>
+4. Do the work:       <code, test, commit>
+5. Complete task:     ghc <number> "Done"
+6. Check milestone:   ghs phase-1-setup
+7. Create PR?:        (if at major milestone)
+8. Repeat
+```
+## Quick Commands
+```
+Command	Action
+ghp	Show all phases overview
+ghn	Show next available tasks
+ghm	Show my assigned tasks
+ghst 5	Start working on task #5
+ghc 5	Complete task #5
+ghs phase-1-setup	Show Phase 1 status
+```

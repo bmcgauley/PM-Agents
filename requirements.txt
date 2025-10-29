@@ -14,6 +14,12 @@ qdrant-client>=1.7.0             # Qdrant Python client
 sentence-transformers>=2.2.0     # Text embeddings for vector search
 
 # ============================================
+# Redis (Caching & Message Queue)
+# ============================================
+redis>=5.0.0                     # Redis Python client
+hiredis>=2.2.0                   # Redis performance boost
+
+# ============================================
 # Python ML/DL Agent
 # ============================================
 torch>=2.0.0                     # PyTorch deep learning framework
