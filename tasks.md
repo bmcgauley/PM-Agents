@@ -88,62 +88,89 @@ Transform the PM-Agents system into a **production-ready, portable agent orchest
 
 **Note**: Existing Python implementations (pm_coordinator_agent.py, pm_ollama_agents.py) are placeholders using PMBOK pattern. Will be refactored in Phase 3 to match these specifications.
 
-#### 2.1.2 Specialist Agents (Complete Implementation)
-- [ ] **Spec-Kit Agent**
-  - [ ] Implement Specify CLI integration
-  - [ ] Create project initialization templates
-  - [ ] Add tech stack configuration logic
-  - [ ] Test with multiple project types
+#### 2.1.2 Specialist Agent Specifications ✅
+- [x] **Spec-Kit Agent specification** → specs/SPEC_KIT_AGENT_SPEC.md
+  - [x] Define Specify CLI integration patterns
+  - [x] Design project initialization templates
+  - [x] Specify tech stack configuration logic
+  - [x] Document input/output schemas (SpecKitRequest, SpecKitResponse)
+  - [x] Define template selection algorithm
+  - [x] Specify configuration generation logic
+  - [x] Document boilerplate generation
 
-- [ ] **Qdrant Vector Agent**
-  - [ ] Implement semantic search functionality
-  - [ ] Add codebase indexing logic
-  - [ ] Create documentation search capabilities
-  - [ ] Add auto-reindexing on file changes
+- [x] **Qdrant Vector Agent specification** → specs/QDRANT_VECTOR_AGENT_SPEC.md
+  - [x] Define semantic search functionality
+  - [x] Design codebase indexing algorithm
+  - [x] Specify documentation search capabilities
+  - [x] Document input/output schemas (QdrantVectorRequest, QdrantVectorResponse)
+  - [x] Define code parsing strategy (TypeScript, Python, R)
+  - [x] Specify embedding generation and storage
+  - [x] Design context retrieval for agents
 
-- [ ] **Frontend Coder Agent**
-  - [ ] Implement React/Next.js code generation
-  - [ ] Add TypeScript strict mode support
-  - [ ] Integrate Supabase client generation
-  - [ ] Create Payload CMS configuration templates
-  - [ ] Add component generation (shadcn/ui patterns)
+- [x] **Frontend Coder Agent specification** → specs/FRONTEND_CODER_AGENT_SPEC.md
+  - [x] Define React/Next.js code generation
+  - [x] Specify TypeScript strict mode support
+  - [x] Design Supabase integration patterns
+  - [x] Document component API design
+  - [x] Specify state management (Zustand/Redux)
+  - [x] Define accessibility requirements (WCAG 2.1 AA)
+  - [x] Design component generation algorithm
 
-- [ ] **Python ML/DL Agent**
-  - [ ] Implement PyTorch model scaffolding
-  - [ ] Add TensorBoard integration
-  - [ ] Create Jupyter notebook generation
-  - [ ] Add experiment tracking (wandb integration)
-  - [ ] Implement model training orchestration
+- [x] **Python ML/DL Agent specification** → specs/PYTHON_ML_DL_AGENT_SPEC.md
+  - [x] Define PyTorch model scaffolding
+  - [x] Specify TensorBoard integration
+  - [x] Design Jupyter notebook generation
+  - [x] Document training pipeline generation
+  - [x] Define model architecture selection logic
+  - [x] Specify experiment tracking patterns
+  - [x] Design data loading pipelines
 
-- [ ] **R Analytics Agent**
-  - [ ] Implement tidyverse data pipeline generation
-  - [ ] Add ggplot2 visualization templates
-  - [ ] Create R Markdown report generation
-  - [ ] Add Shiny dashboard scaffolding
+- [x] **R Analytics Agent specification** → specs/R_ANALYTICS_AGENT_SPEC.md
+  - [x] Define tidyverse data pipeline generation
+  - [x] Specify ggplot2 visualization templates
+  - [x] Design R Markdown report generation
+  - [x] Document Shiny dashboard scaffolding
+  - [x] Define statistical analysis code generation
+  - [x] Specify data wrangling algorithms
+  - [x] Design report compilation workflow
 
-- [ ] **TypeScript Validator Agent**
-  - [ ] Implement type checking automation
-  - [ ] Add ESLint/Prettier enforcement
-  - [ ] Create test coverage reporting
-  - [ ] Add security scanning (npm audit, Snyk)
+- [x] **TypeScript Validator Agent specification** → specs/TYPESCRIPT_VALIDATOR_AGENT_SPEC.md
+  - [x] Define type checking automation
+  - [x] Specify ESLint/Prettier enforcement
+  - [x] Design test coverage reporting
+  - [x] Document security scanning (npm audit, Safety, Bandit)
+  - [x] Define quality gate criteria
+  - [x] Specify validation pipeline
+  - [x] Design accessibility validation (axe-core)
 
-- [ ] **Research Agent**
-  - [ ] Implement Brave Search integration
-  - [ ] Add academic paper search (ArXiv, Semantic Scholar)
-  - [ ] Create research synthesis capabilities
-  - [ ] Add citation management
+- [x] **Research Agent specification** → specs/RESEARCH_AGENT_SPEC.md
+  - [x] Define Brave Search integration
+  - [x] Specify GitHub code search
+  - [x] Design research synthesis capabilities
+  - [x] Document query formulation algorithm
+  - [x] Define result filtering and ranking
+  - [x] Specify citation management
+  - [x] Design multi-source research workflow
 
-- [ ] **Browser Agent**
-  - [ ] Implement Puppeteer automation
-  - [ ] Add web scraping capabilities
-  - [ ] Create E2E testing frameworks
-  - [ ] Add screenshot/PDF generation
+- [x] **Browser Agent specification** → specs/BROWSER_AGENT_SPEC.md
+  - [x] Define Puppeteer automation
+  - [x] Specify web scraping capabilities
+  - [x] Design E2E testing frameworks
+  - [x] Document screenshot/PDF generation
+  - [x] Define visual regression testing
+  - [x] Specify accessibility testing (axe-core)
+  - [x] Design form automation workflow
 
-- [ ] **Reporter Agent**
-  - [ ] Implement documentation generation
-  - [ ] Add README.md creation
-  - [ ] Create API documentation (JSDoc, Sphinx)
-  - [ ] Add diagram generation (Mermaid, PlantUML)
+- [x] **Reporter Agent specification** → specs/REPORTER_AGENT_SPEC.md
+  - [x] Define documentation generation
+  - [x] Specify README.md creation
+  - [x] Design API documentation (JSDoc, Sphinx)
+  - [x] Document diagram generation (Mermaid, PlantUML)
+  - [x] Define progress report aggregation
+  - [x] Specify architecture diagram generation
+  - [x] Design user guide creation
+
+**Note**: Specifications complete. Implementation to follow in Phase 3.
 
 ### 2.2 MCP Tool Integration
 - [ ] **Create custom MCP servers**:
