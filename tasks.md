@@ -172,14 +172,20 @@ Transform the PM-Agents system into a **production-ready, portable agent orchest
 
 **Note**: Specifications complete. Implementation to follow in Phase 3.
 
-### 2.2 MCP Tool Integration
-- [ ] **Create custom MCP servers**:
-  - [ ] Qdrant MCP server (semantic search)
-  - [ ] TensorBoard MCP server (ML monitoring)
-  - [ ] Specify MCP server (project initialization)
-- [ ] **Document MCP server APIs** for each agent
-- [ ] **Create MCP server installation scripts**
-- [ ] **Test MCP server reliability and error handling**
+### 2.2 MCP Tool Integration ✅
+- [x] **Create custom MCP servers specifications**:
+  - [x] Qdrant MCP server specification → specs/MCP_QDRANT_SERVER_SPEC.md
+  - [x] TensorBoard MCP server specification → specs/MCP_TENSORBOARD_SERVER_SPEC.md
+  - [x] Specify MCP server specification → specs/MCP_SPECIFY_SERVER_SPEC.md
+- [x] **Document MCP server APIs** for each agent → MCP_AGENT_INTEGRATION.md
+- [x] **Create MCP server installation scripts**:
+  - [x] Linux/macOS installation script → scripts/install_mcp_servers.sh
+  - [x] Windows PowerShell installation script → scripts/install_mcp_servers.ps1
+  - [x] Linux/macOS verification script → scripts/verify_mcp_servers.sh
+  - [x] Windows PowerShell verification script → scripts/verify_mcp_servers.ps1
+- [x] **Test MCP server reliability and error handling** → MCP_TESTING_RELIABILITY.md
+
+**Note**: Specifications complete. Implementation to follow in Phase 3. Installation scripts ready to use once custom MCP servers are published to npm.
 
 ### 2.3 Agent Communication Protocol
 - [ ] **Define message schemas** for A2A communication
