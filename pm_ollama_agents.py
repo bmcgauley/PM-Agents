@@ -1,6 +1,6 @@
 """
 PM-Agents Multi-Agent System - Ollama Implementation
-Hierarchical agent system using local Ollama models (Gemma2/Gemma3)
+Hierarchical agent system using local Ollama models (Gemma3:1b)
 Matches Anthropic implementation architecture with local inference
 """
 
@@ -114,7 +114,7 @@ class OllamaBaseAgent:
         agent_id: str,
         agent_type: AgentType,
         ollama_url: str = "http://localhost:11434",
-        model: str = "gemma2:latest",
+        model: str = "gemma3:1b",
         temperature: float = 0.7,
         num_gpu: int = -1,  # -1 = auto, 0 = CPU only, >0 = specific GPU layers
         quantization: Optional[str] = None,  # Q4_0, Q4_1, Q5_0, Q5_1, Q8_0, F16, F32
@@ -420,7 +420,7 @@ class OllamaCoordinatorAgent(OllamaBaseAgent):
         self,
         agent_id: str = "coordinator-ollama-001",
         ollama_url: str = "http://localhost:11434",
-        model: str = "gemma2:latest",
+        model: str = "gemma3:1b",
         num_gpu: int = -1,
         quantization: Optional[str] = None,
         logger: Optional[logging.Logger] = None
@@ -574,7 +574,7 @@ class OllamaPlannerAgent(OllamaBaseAgent):
         self,
         agent_id: str = "planner-ollama-001",
         ollama_url: str = "http://localhost:11434",
-        model: str = "gemma2:latest",
+        model: str = "gemma3:1b",
         num_gpu: int = -1,
         quantization: Optional[str] = None,
         logger: Optional[logging.Logger] = None
@@ -681,7 +681,7 @@ class OllamaSupervisorAgent(OllamaBaseAgent):
         self,
         agent_id: str = "supervisor-ollama-001",
         ollama_url: str = "http://localhost:11434",
-        model: str = "gemma2:latest",
+        model: str = "gemma3:1b",
         num_gpu: int = -1,
         quantization: Optional[str] = None,
         logger: Optional[logging.Logger] = None
@@ -774,7 +774,7 @@ Manage dependencies and sequencing appropriately.
 def create_ollama_specialist_agent(
     agent_type: AgentType,
     ollama_url: str = "http://localhost:11434",
-    model: str = "gemma2:latest",
+    model: str = "gemma3:1b",
     num_gpu: int = -1,
     quantization: Optional[str] = None,
     logger: Optional[logging.Logger] = None
@@ -823,7 +823,7 @@ class OllamaPMAgentsSystem:
     def __init__(
         self,
         ollama_url: str = "http://localhost:11434",
-        model: str = "gemma2:latest",
+        model: str = "gemma3:1b",
         num_gpu: int = -1,
         quantization: Optional[str] = None,
         log_level: str = "INFO"
@@ -833,7 +833,7 @@ class OllamaPMAgentsSystem:
 
         Args:
             ollama_url: Ollama API URL
-            model: Ollama model (gemma2:latest, gemma3, etc.)
+            model: Ollama model (gemma3:1b, gemma3:3b, etc.)
             num_gpu: GPU layers (-1=auto, 0=CPU only, >0=specific layers)
             quantization: Model quantization (Q4_0, Q4_1, Q5_0, Q5_1, Q8_0, F16, F32)
             log_level: Logging level
@@ -1082,7 +1082,7 @@ async def main():
                         help="Project type")
     parser.add_argument("--requirements", nargs="+", required=True, help="Project requirements")
     parser.add_argument("--ollama-url", default="http://localhost:11434", help="Ollama API URL")
-    parser.add_argument("--model", default="gemma2:latest", help="Ollama model")
+    parser.add_argument("--model", default="gemma3:1b", help="Ollama model")
     parser.add_argument("--num-gpu", type=int, default=-1,
                         help="GPU layers (-1=auto, 0=CPU only, >0=specific layers)")
     parser.add_argument("--quantization", default=None,
@@ -1124,7 +1124,7 @@ async def main():
 
         print("\nSystem Status:")
         status = system.get_system_status()
-        print(f"  Model: {status['model']}")
+        print(f"  Model: {status['model']} (Gemma3 1B)")
         print(f"  Coordinator calls: {status['coordinator']['total_calls']}")
         print(f"  Planner calls: {status['planner']['total_calls']}")
         print(f"  Supervisor calls: {status['supervisor']['total_calls']}")

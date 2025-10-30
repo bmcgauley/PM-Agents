@@ -1,6 +1,7 @@
 """
 Integration Tests for Ollama PM-Agents System
 Tests the complete Ollama-based hierarchical multi-agent system
+Uses Gemma3:1b model by default
 """
 
 import pytest
@@ -52,12 +53,12 @@ def test_ollama_base_agent_initialization():
     agent = OllamaBaseAgent(
         agent_id="test-agent-001",
         agent_type=AgentType.RESEARCH,
-        model="gemma2:latest"
+        model="gemma3:1b"
     )
 
     assert agent.agent_id == "test-agent-001"
     assert agent.agent_type == AgentType.RESEARCH
-    assert agent.model == "gemma2:latest"
+    assert agent.model == "gemma3:1b"
     assert agent.circuit_breaker_open == False
     assert agent.total_calls == 0
 
@@ -69,7 +70,7 @@ async def test_ollama_base_agent_process_task():
     agent = OllamaBaseAgent(
         agent_id="test-agent-002",
         agent_type=AgentType.RESEARCH,
-        model="gemma2:latest"
+        model="gemma3:1b"
     )
 
     context = TaskContext(
@@ -102,7 +103,7 @@ async def test_ollama_base_agent_process_task():
 @pytest.mark.asyncio
 async def test_coordinator_agent_initiate_project():
     """Test CoordinatorAgent project initiation"""
-    coordinator = OllamaCoordinatorAgent(model="gemma2:latest")
+    coordinator = OllamaCoordinatorAgent(model="gemma3:1b")
 
     result = await coordinator.initiate_project(
         project_name="Test Project",
@@ -123,7 +124,7 @@ async def test_coordinator_agent_initiate_project():
 @pytest.mark.asyncio
 async def test_coordinator_agent_phase_gate():
     """Test CoordinatorAgent phase gate review"""
-    coordinator = OllamaCoordinatorAgent(model="gemma2:latest")
+    coordinator = OllamaCoordinatorAgent(model="gemma3:1b")
 
     phase_outputs = {
         "deliverables": [
@@ -147,7 +148,7 @@ async def test_coordinator_agent_phase_gate():
 @pytest.mark.asyncio
 async def test_planner_agent_create_plan():
     """Test PlannerAgent plan creation"""
-    planner = OllamaPlannerAgent(model="gemma2:latest")
+    planner = OllamaPlannerAgent(model="gemma3:1b")
 
     result = await planner.create_project_plan(
         project_id="test-project-002",
@@ -166,12 +167,12 @@ async def test_planner_agent_create_plan():
 @pytest.mark.asyncio
 async def test_supervisor_agent_coordination():
     """Test SupervisorAgent coordination"""
-    supervisor = OllamaSupervisorAgent(model="gemma2:latest")
+    supervisor = OllamaSupervisorAgent(model="gemma3:1b")
 
     # Register a specialist
     specialist = create_ollama_specialist_agent(
         agent_type=AgentType.FRONTEND_CODER,
-        model="gemma2:latest"
+        model="gemma3:1b"
     )
     supervisor.register_specialist("frontend_coder", specialist)
 
@@ -215,12 +216,12 @@ def test_create_specialist_agents():
     for agent_type in specialist_types:
         agent = create_ollama_specialist_agent(
             agent_type=agent_type,
-            model="gemma2:latest"
+            model="gemma3:1b"
         )
 
         assert agent is not None
         assert agent.agent_type == agent_type
-        assert agent.model == "gemma2:latest"
+        assert agent.model == "gemma3:1b"
 
 
 # ============================================================================
@@ -278,7 +279,7 @@ def test_quantization_configuration():
 async def test_ollama_system_initialization():
     """Test OllamaPMAgentsSystem initialization"""
     system = OllamaPMAgentsSystem(
-        model="gemma2:latest",
+        model="gemma3:1b",
         log_level="ERROR"  # Suppress logs during testing
     )
 
@@ -303,7 +304,7 @@ async def test_ollama_system_initialization():
 async def test_ollama_system_status():
     """Test system status reporting"""
     system = OllamaPMAgentsSystem(
-        model="gemma2:latest",
+        model="gemma3:1b",
         log_level="ERROR"
     )
 
@@ -316,7 +317,7 @@ async def test_ollama_system_status():
     assert "ollama_url" in status
     assert "model" in status
 
-    assert status["model"] == "gemma2:latest"
+    assert status["model"] == "gemma3:1b"
     assert len(status["specialists"]) == 9
 
 
@@ -325,7 +326,7 @@ async def test_ollama_system_status():
 async def test_ollama_system_simple_project():
     """Test running a simple project through the system"""
     system = OllamaPMAgentsSystem(
-        model="gemma2:latest",
+        model="gemma3:1b",
         log_level="ERROR"
     )
 
@@ -390,7 +391,7 @@ async def test_performance_tracking():
     agent = OllamaBaseAgent(
         agent_id="perf-test",
         agent_type=AgentType.RESEARCH,
-        model="gemma2:latest"
+        model="gemma3:1b"
     )
 
     context = TaskContext(
@@ -418,7 +419,7 @@ if __name__ == "__main__":
     if not OLLAMA_AVAILABLE:
         print("⚠️  Ollama is not running. Please start Ollama:")
         print("   1. Run: ollama serve")
-        print("   2. Run: ollama pull gemma2")
+        print("   2. Run: ollama pull gemma3:1b")
         print("   3. Re-run tests")
         sys.exit(1)
 
