@@ -272,9 +272,12 @@ Transform the PM-Agents system into a **production-ready, portable agent orchest
 
 ## Phase 3: Execution (Implementation)
 
-### 3.1 Core System Implementation
+### 3.1 Core System Implementation (Issue #3 - Reopened)
 
-#### 3.1.1 Finalize Anthropic Implementation ✅ COMPLETE
+**Status**: 1/3 subphases complete
+**Sub-Issues**: #12 (3.1.2), #13 (3.1.3)
+
+#### 3.1.1 Finalize Anthropic Implementation ✅ COMPLETE (Commit 8dd20d8)
 - [x] **Core Infrastructure** (Commit c9a5e6e):
   - [x] Implement BaseAgent with A2A communication, retry logic, circuit breaker
   - [x] Implement ProjectState for state tracking
@@ -312,19 +315,24 @@ Transform the PM-Agents system into a **production-ready, portable agent orchest
   - **Test Results**: 7/7 core tests PASSED, 5 API-dependent tests SKIPPED
   - **Status**: ✅ Phase 3.1.1 COMPLETE AND TESTED
 
-#### 3.1.2 Finalize Ollama Implementation
+#### 3.1.2 Finalize Ollama Implementation (Issue #12)
 - [ ] **Complete pm_ollama_agents.py**:
+  - [ ] Refactor to match hierarchical architecture (not PMBOK phases)
   - [ ] Test with Gemma2 and Gemma3
   - [ ] Optimize local model performance
   - [ ] Add GPU acceleration support
   - [ ] Implement model quantization options
+  - [ ] Integration with PMAgentsSystem
+  - [ ] Run same integration tests as Anthropic version
 
-#### 3.1.3 Hybrid Mode
+#### 3.1.3 Hybrid Mode (Issue #13)
 - [ ] **Create hybrid orchestrator**:
-  - [ ] Use Claude for planning/coordination
-  - [ ] Use Ollama for code generation
+  - [ ] Use Claude for planning/coordination (Tier 1-2)
+  - [ ] Use Ollama for code generation (Tier 4 specialists)
   - [ ] Implement intelligent model routing
   - [ ] Add cost optimization logic
+  - [ ] Budget-aware backend switching
+  - [ ] Performance benchmarking (Claude vs Hybrid vs Ollama)
 
 ### 3.2 Tool Integration
 
