@@ -302,6 +302,16 @@ Transform the PM-Agents system into a **production-ready, portable agent orchest
   - [x] Add cost tracking for API calls (token usage in metadata)
   - [x] Optimize prompt engineering for efficiency (structured JSON output)
 
+- [x] **Integration Testing** (2025-10-29):
+  - [x] Create integration test suite (tests/integration/test_basic_integration.py)
+  - [x] Test DecisionEngine (accept/reject requests) - PASSED
+  - [x] Test ProjectState management (tracking, tokens, gates) - PASSED
+  - [x] Test agent capabilities and status - PASSED
+  - [x] Validate error handling and retry mechanisms - PASSED
+  - [x] Document test results → PHASE_3_1_1_TEST_RESULTS.md
+  - **Test Results**: 7/7 core tests PASSED, 5 API-dependent tests SKIPPED
+  - **Status**: ✅ Phase 3.1.1 COMPLETE AND TESTED
+
 #### 3.1.2 Finalize Ollama Implementation
 - [ ] **Complete pm_ollama_agents.py**:
   - [ ] Test with Gemma2 and Gemma3
